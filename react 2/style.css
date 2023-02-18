@@ -54,3 +54,41 @@ body{
     width: 100px;
     box-sizing: border-box;
 }
+.skeleton{
+    display: flex;
+    flex-wrap: wrap;
+}
+.sk_feed{
+    width: 250px;
+    padding: 10px;
+    border:  1px solid lightgray;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    animation: Skeleton 1s ease infinite alternate;
+}
+@keyframes Skeleton {
+    to{
+        opacity: 0.5;
+    }
+}
+.sk_feed > .img{
+    background-color: #999;
+    height: 150px;
+}
+.sk_feed > .heading{
+    background-color: #999;
+    height:  20px;
+}
+.sk_feed > .rating{
+    background-color: #999;
+    height: 20px;
+    width: 30px;
+}
+.empty_msg{
+    margin: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: red;
+}
