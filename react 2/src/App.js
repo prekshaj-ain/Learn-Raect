@@ -4,7 +4,11 @@ import ReactDOM from "react-dom/client"
 import Header from "./Components/Header";
 import Body from "./Components/Body"
 import Footer from "./Components/Footer";
-
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import About from "./Components/About";
+import Contact from "./Components/Contact";
+import ErrorPage from "./ErrorPage";
+import SingleRestaurant from "./Components/SingleRestaurant";
 const AppLayout = ()=>(
     {
         /* 
@@ -27,10 +31,36 @@ function App(){
     return (
         <>
             <Header />
-            <Body />
+            <Outlet />
             <Footer />
         </>
     )
 }
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <App />,
+        errorElement: <ErrorPage />,
+        children:[
+            {
+                path: "/",
+                element: <Body />
+            },
+            {
+                path: "/About",
+                element: <About />
+            },
+            {
+                path: "/Contact",
+                element: <Contact />
+            },
+            {
+                path: "/restaurant/:id",
+                element: <SingleRestaurant />
+            }
+
+        ]
+    }
+])
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />)
+root.render(<RouterProvider router={router} />)

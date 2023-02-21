@@ -92,3 +92,23 @@ body{
     font-size: 1.2rem;
     color: red;
 }
+.single{
+    background-color: rgb(19, 1, 29);
+    width: 100vw;
+    margin: 0px -40px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+}
+.single > .restaurant_banner{
+    width: 80%;
+}
+.restaurant_banner > .restaurant_detail{
+    color: white;
+    display: flex;
+    gap: 30px;
+}
+.restaurant_banner > .restaurant_detail > img{
+    width: 300px;
+}
+
