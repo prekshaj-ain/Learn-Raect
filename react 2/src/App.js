@@ -9,6 +9,7 @@ import About from "./Components/About";
 import Contact from "./Components/Contact";
 import ErrorPage from "./ErrorPage";
 import SingleRestaurant from "./Components/SingleRestaurant";
+import Login from "./Components/Login";
 const AppLayout = ()=>(
     {
         /* 
@@ -58,8 +59,12 @@ const router = createBrowserRouter([
                 path: "/restaurant/:id",
                 element: <SingleRestaurant />
             }
-
         ]
+    },
+    {
+        path: "/login",
+        element: <Login />
+
     }
 ])
 const root = ReactDOM.createRoot(document.getElementById("root"));

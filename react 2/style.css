@@ -1,17 +1,16 @@
 body{
-    padding: 0px 40px;
     margin: 0;
 }
 .Header{
+    padding: 0px 40px;
     display: flex;
     align-items: center;
     /* border: 1px solid black; */
     justify-content: space-between;
 }
 .logo{
-    color: red;
-    font-size: 1.3rem;
-    font-weight: bold;
+    width: 100px;
+    background: transparent;
 }
 .navItems{
     list-style: none;
@@ -32,7 +31,9 @@ body{
 }
 .restaurant-list{
     display: flex;
-    flex-wrap:wrap ;
+    flex-wrap:wrap;
+    padding: 0px 40px;
+
 }
 .search{
     padding: 40px;
@@ -111,4 +112,71 @@ body{
 .restaurant_banner > .restaurant_detail > img{
     width: 300px;
 }
+.loginPage{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.loginPage > .form{
+flex-grow: 3;
+padding: 50px;
 
+}
+.form-header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+}
+.form-header >.buttons{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.form-header >.buttons > button{
+    padding: 8px 20px;
+    background-color: black;
+    color: white;
+    font-weight: 700;
+}
+.loginPage > .image{
+    width: 450px;
+    height: 100vh;
+    object-fit: cover;
+}
+.form-handler {
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+.form-handler > .form{
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    flex-direction: column;
+    gap: 5px;
+}
+.form-handler > .form > label{
+    font-size: .7rem;
+}
+.form-handler > .form >input{
+    height: 30px;
+    outline: none;
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+.form-handler > .form > .fieldError{
+    font-size: .7rem;
+    color: red;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+.form-handler > .form > button{
+    height: 40px;
+    background-color: orangered;
+    border: none;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
