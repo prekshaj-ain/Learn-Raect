@@ -10,6 +10,7 @@ import Contact from "./Components/Contact";
 import ErrorPage from "./ErrorPage";
 import SingleRestaurant from "./Components/SingleRestaurant";
 import Login from "./Components/Login";
+import Profile from "./Components/ProfileClass";
 const AppLayout = ()=>(
     {
         /* 
@@ -49,7 +50,13 @@ const router = createBrowserRouter([
             },
             {
                 path: "/About",
-                element: <About />
+                element: <About />,
+                children:[
+                    {
+                        path: "Profile",
+                        element: <Profile />
+                    }
+                ]
             },
             {
                 path: "/Contact",
