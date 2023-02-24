@@ -1,17 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { CLOUD_IMG_URL } from "../../Config";
+import useRestaurant from "./Utils/useRestaurant";
 const SingleRestaurant = ()=>{
     const {id} = useParams();
-    const [restaurant,setRestaurant] = useState();
-    useEffect(()=>{
-        const fetchRestaurant = async ()=>{
-            const res = await fetch("https://www.swiggy.com/dapi/menu/v4/full?lat=28.6853005&lng=77.257933&menuId="+id);
-            const data = await res.json()
-            setRestaurant(data.data);
-        }
-        fetchRestaurant();
-    },[id])
+    const restaurant = useRestaurant(id);
     // early return
     if(!restaurant) return null;
     return (

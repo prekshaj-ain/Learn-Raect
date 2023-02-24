@@ -1,16 +1,23 @@
-import React from "react"
+import React, { lazy, Suspense } from "react"
 import ReactDOM from "react-dom/client"
 // Default import
 import Header from "./Components/Header";
 import Body from "./Components/Body"
 import Footer from "./Components/Footer";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import About from "./Components/About";
+// import About from "./Components/About";
 import Contact from "./Components/Contact";
 import ErrorPage from "./ErrorPage";
 import SingleRestaurant from "./Components/SingleRestaurant";
 import Login from "./Components/Login";
 import Profile from "./Components/ProfileClass";
+// code splitting
+// chunking
+// on demand loading
+// dynamic imports
+// lazy loading
+// dynamic bundling
+const About = lazy(()=> import("./Components/About"))
 const AppLayout = ()=>(
     {
         /* 
@@ -50,7 +57,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/About",
-                element: <About />,
+                element: <Suspense fallback={<p>Loading...</p>}><About /></Suspense>,
                 children:[
                     {
                         path: "Profile",

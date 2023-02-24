@@ -3,12 +3,14 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import Skeleton from "./Skeleton";
 import { Link } from "react-router-dom";
+import useOnline from "./Utils/useOnline";
 const filterData = function (searchText, restaurants) {
   return restaurants.filter((restaurant) =>
   restaurant?.data?.name?.toLowerCase()?.includes(searchText?.toLowerCase())
   );
 };
 const Body = function () {
+
   useEffect(() => {
     const fetchRestaurant = async () => {
       const data = await fetch(
@@ -28,7 +30,10 @@ const Body = function () {
   const changeHandler = (e) => {
     setSearchTxt(e.target.value);
   };
-
+  const online = useOnline();
+  if(!online){
+    return <h3>⚠️ You are offline</h3>
+  }
   return (
     <>
       <div className="search">
