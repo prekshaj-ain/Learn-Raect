@@ -36,20 +36,13 @@ const Body = function () {
   }
   return (
     <>
-      <div className="search">
-        <input
-          placeholder="search Restaurant"
+      <div className="border-2 rounded w-4/5 h-10 m-auto flex items-center">
+        <input className="placeholder:text-gray-500 placeholder:text-xs px-4 font-medium h-4 border-0 outline-none"
+          placeholder="Search for Restaurant"
           type="text"
           value={searchTxt}
           onChange={changeHandler}
         />
-        <button
-          onClick={() =>
-            setFilterRestaurants(filterData(searchTxt, allRestaurants))
-          }
-        >
-          Search
-        </button>
       </div>
       { (filterRestaurants.length === 0 && allRestaurants.length !== 0) && <div className="empty_msg">No restaurant found!</div>}
       {allRestaurants.length === 0 ? (

@@ -11,6 +11,7 @@ import ErrorPage from "./ErrorPage";
 import SingleRestaurant from "./Components/SingleRestaurant";
 import Login from "./Components/Login";
 import Profile from "./Components/ProfileClass";
+import Instamart from "./Components/Instamart";
 // code splitting
 // chunking
 // on demand loading
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
             {
                 path: "/restaurant/:id",
                 element: <SingleRestaurant />
+            },
+            {
+                path: "/instamart",
+                element: <Instamart />
             }
         ]
     },
